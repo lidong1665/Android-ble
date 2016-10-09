@@ -54,7 +54,9 @@ private BluetoothAdapter.LeScanCallback mLeScanCallback = new BluetoothAdapter.L
 mBluetoothAdapter.startLeScan(mLeScanCallback);
 ```
 
-###2.5.BluetoothDevice 描述了一个蓝牙设备 提供了getAddress()设备Mac地址,getName()设备的名称。 #2.6开始连接设备
+###2.5.BluetoothDevice 描述了一个蓝牙设备 提供了getAddress()设备Mac地址,getName()设备的名称。
+
+###2.6开始连接设备
 
 ```
 public boolean connect(final String address) {
