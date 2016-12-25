@@ -186,9 +186,9 @@ public class DeviceScanActivity extends ListActivity {
 
                     String struuid = bytes2HexString(reverseBytes(scanRecord)).replace("-", "").toLowerCase();;
                     Log.d(TAG, "run: "+struuid);
-                    String sring =  device.getName();
-                    Log.d(TAG, "run:sring "+sring);
-                    if("CardioChek Meter:".contains(sring)) {
+                    String name =  device.getName();
+                    Log.d(TAG, "run:sring "+name);
+                    if(!TextUtils.isEmpty(name) && "CardioChek Meter:".contains(name)) {
                         mLeDeviceListAdapter.addDevice(device);
                         mLeDeviceListAdapter.notifyDataSetChanged();
                     }
