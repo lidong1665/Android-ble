@@ -11,7 +11,7 @@ Android蓝牙4.0操作demo 最近，随着智能穿戴式设备、智能医疗�
 * (3)Service是Characteristic的集合。
 *  (4).Characteristic 特征类型。
 
-比如。有个蓝牙ble的血压计。他可能包括多个Servvice，每个Service有包括多个Characteristic
+比如。有个蓝牙ble的血压计。他可能包括多个Service，每个Service有包括多个Characteristic
 
 注意：蓝牙ble只能支持Android 4.3以上的系统 SDK>=18
 
@@ -23,7 +23,7 @@ Android蓝牙4.0操作demo 最近，随着智能穿戴式设备、智能医疗�
 ```
 BluetoothAdapter mBluetoothAdapter = bluetoothManager.getAdapter();
 ```
-###2.3创建BluetoothAdapter.LeScanCallback
+### 2.3创建BluetoothAdapter.LeScanCallback
 
 ```
 private BluetoothAdapter.LeScanCallback mLeScanCallback = new BluetoothAdapter.LeScanCallback() {
@@ -54,9 +54,9 @@ private BluetoothAdapter.LeScanCallback mLeScanCallback = new BluetoothAdapter.L
 mBluetoothAdapter.startLeScan(mLeScanCallback);
 ```
 
-###2.5.BluetoothDevice 描述了一个蓝牙设备 提供了getAddress()设备Mac地址,getName()设备的名称。
+### 2.5.BluetoothDevice 描述了一个蓝牙设备 提供了getAddress()设备Mac地址,getName()设备的名称。
 
-###2.6开始连接设备
+### 2.6开始连接设备
 
 ```
 public boolean connect(final String address) {
@@ -92,7 +92,7 @@ return false;
 }  
 ```
 
-###2.7连接到设备之后获取设备的服务(Service)和服务对应的Characteristic。
+### 2.7连接到设备之后获取设备的服务(Service)和服务对应的Characteristic。
 
 ```
 // Demonstrates how to iterate through the supported GATT
@@ -164,7 +164,7 @@ for (BluetoothGattService gattService : gattServices) {
 }
 ```
 
-###2.8获取到特征之后，找到服务中可以向下位机写指令的特征，向该特征写入指令。
+### 2.8获取到特征之后，找到服务中可以向下位机写指令的特征，向该特征写入指令。
 
 public void wirteCharacteristic(BluetoothGattCharacteristic characteristic) {
 
@@ -176,7 +176,7 @@ public void wirteCharacteristic(BluetoothGattCharacteristic characteristic) {
     mBluetoothGatt.writeCharacteristic(characteristic);  
 
 }  
-###2.9写入成功之后，开始读取设备返回来的数据。
+### 2.9写入成功之后，开始读取设备返回来的数据。
 
 ```
 private final BluetoothGattCallback mGattCallback = new BluetoothGattCallback() {
@@ -282,7 +282,7 @@ mBluetoothGatt.disconnect();
 }
 ```
 
-###2.11、数据的转换方法
+### 2.11、数据的转换方法
 
 ```
 // byte转十六进制字符串
@@ -317,7 +317,7 @@ return bytes;
 [代码下载地址：https://github.com/lidong1665/Android-ble](https://github.com/lidong1665/Android-ble)
 
 
-###总结
+### 总结
 
 大概整体就是如上的步骤。但是也是要具体根据厂家的协议来实现通信的过程。
 
